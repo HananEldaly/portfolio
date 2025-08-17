@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hanan's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #cecece;
+  color: black;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Hamburger button */
+.navbar .icon {
+  display: none;
+  font-size: 22px;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+/* Layout */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.side img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  height:350px;
+}
+.main img {
+width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #1abc9c;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+  .side, .main {
+    flex: 100%;
+  }
+
+  /* Hide links & show hamburger */
+  .navbar a { display: none; }
+  .navbar a.icon {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+/* Show menu when responsive */
+@media screen and (max-width: 700px) {
+  .navbar.responsive { position: relative; }
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Hanan Eldaly</h1>
+  <p>Frontend Developer | UI/UX Enthusiast</p>
+</div>
+
+<!-- Navbar -->
+<div class="navbar" id="myNavbar">
+  <a href="#home">Home</a>
+  <a href="#about">About Me</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+</div>
+
+<!-- Content -->
+<div class="row">
+  <!-- Sidebar -->
+  <div class="side" id="about">
+    <h2>About Me</h2>
+    <img src="../assets/girl_avatar.jpg" alt="Hanan Eldaly">
+    <p>Hello! I'm Hanan, a Computer Science student at South Valley University, passionate about Frontend Development and UI/UX design. I love turning ideas into interactive web experiences.</p>
+    
+    <h3>Skills</h3>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>React & Tailwind</li>
+      <li>UI/UX Design</li>
+      <li>C++ & Python Basics</li>
+    </ul>
+  </div>
+
+  <!-- Main Section -->
+  <div class="main" id="projects">
+    <h2>Projects</h2>
+    <h3>Online Courses Website</h3>
+    <img src="../assets/Screenshot 2025-08-17 160439.png" alt="Online Courses Website">
+    <p>A web application for booking online lessons for middle and high school students, with user-friendly and responsive interfaces.</p>
+    <br>
+
+    <h3>Teacher Dashboard</h3>
+    <h5>Responsive Web App</h5>
+    <img src="../assets/Screenshot 2025-08-17 161620.png" alt="Teacher Dashboard">
+    <p>A responsive dashboard for teachers built with HTML, CSS (Flexbox), designed to adapt to different screen sizes.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer" id="contact">
+  <h2>Contact Me</h2>
+  <p>Email: <a href="mailto:hanan@example.com">hanan@example.com</a></p>
+  <p>GitHub: <a href="https://github.com/hanan" target="_blank">github.com/hanan</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/hanan" target="_blank">linkedin.com/in/hanan</a></p>
+</div>
+
+<script>
+function toggleMenu() {
+  var x = document.getElementById("myNavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+</script>
+
+</body>
+</html>
